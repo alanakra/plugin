@@ -3,20 +3,29 @@ body {
     padding: 10px;
     font-family: system-ui;
     text-align: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-xl {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
 }
 
 button {
     margin-left: 1rem;
     border-radius: 0.25rem;
-    background-color: green;
     border: none;
     padding: 0.5rem;
+    cursor: pointer;
+}
+
+button#submit {
+    background-color: green;
+}
+
+#inputPwd {
+    width: 5rem;
+}
+
+#result {
+    font-size: 1.125rem;
+}
+
+#inputResult {
+    margin-bottom: 0.8rem;
 }

@@ -9,10 +9,14 @@
     <strong>Password Generator</strong>
     <form>
       <p>Please enter the length of your password (min 8 characters):</p>
-      <input type="number" id="inputPwd"></input>
-      <button type="submit">Generate</button>
-      <p id="result"></p>
+      <input type="number" id="inputPwd" min="8"></input>
+      <button id="submit" type="submit">Generate</button>
+      <div>
+      </div>
     </form>
+    <p id="result"></p>
+    <input type="text" id="inputResult">
+    <button id="copyPwd">Copy to clipboard</button>
 </body>
 <script src="index.js"></script>
 </html>
