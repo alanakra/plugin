@@ -8,10 +8,14 @@ form.addEventListener('submit', (e) => {
   const resultPassword = generatePassword()
   result.innerHTML = `Your password is ${resultPassword}`
   inputPwd.value = ''
+  inputResult.value = resultPassword
 })
 
 function generatePassword () {
-    const inputPwd = document.getElementById('inputPwd').value
+    let inputPwd = document.getElementById('inputPwd').value
+    if(inputPwd == 0) {
+      inputPwd = 8
+    }
     const bigString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789[]{}()*;/,_-"
     const specialString = "@#$%"
 
