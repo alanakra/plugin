@@ -2,13 +2,18 @@ const form = document.getElementsByTagName('form')[0]
 const result = document.getElementById('result')
 const copyPwd = document.getElementById('copyPwd')
 const inputResult = document.getElementById('inputResult')
+const blocResult = document.getElementsByClassName('blocResult')[0]
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const resultPassword = generatePassword()
-  result.innerHTML = `Your password is ${resultPassword}`
   inputPwd.value = ''
   inputResult.value = resultPassword
+  blocResult.style.display = "block"
+})
+
+copyPwd.addEventListener('click', () => {
+  navigator.clipboard.writeText(inputResult.value)
 })
 
 function generatePassword () {
