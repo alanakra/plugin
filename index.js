@@ -3,6 +3,7 @@ const result = document.getElementById('result')
 const copyPwd = document.getElementById('copyPwd')
 const inputResult = document.getElementById('inputResult')
 const blocResult = document.getElementsByClassName('blocResult')[0]
+const bubbleText = document.getElementsByClassName('bubbletext')[0]
 
 form.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -10,10 +11,13 @@ form.addEventListener('submit', (e) => {
   inputPwd.value = ''
   inputResult.value = resultPassword
   blocResult.style.display = "block"
+  bubbleText.innerHTML = "Copy to clipboard"
 })
 
 copyPwd.addEventListener('click', () => {
-  navigator.clipboard.writeText(inputResult.value)
+  navigator.clipboard.writeText(inputResult.value).then(()=>{
+    bubbleText.innerHTML = "Copied to clipboard"
+  })
 })
 
 function generatePassword () {
